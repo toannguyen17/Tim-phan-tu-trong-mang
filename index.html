@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bài 6- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng số nguyên không? Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".</title>
+</head>
+<body onload="createArr()">
+<p>Bài 6- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng số nguyên không? Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".</p>
+<p id="content"></p>
+<button onclick="findInArr()">Tìm phần tử trong mảng</button>
+<script type="text/javascript">
+		let content = document.querySelector('#content');
+		let arr     = [];
+		function createArr() {
+			for (let i = 0; i < 10; i++) {
+				arr[i] = ((Math.random()*20)+1)>>0;
+			}
+			content.innerText = JSON.stringify(arr);
+		}
+		function findInArr() {
+			let enter = prompt('Nhập vào số nguyên cần tìm.');
+			let index = -1;
+			for (let i = 0; i < arr.length; i++) {
+				let data = arr[i];
+				if (data == enter) {
+					index = i;
+					break;
+				}
+			}
+			if (index === -1) {
+				alert(enter+ ' is not in the array');
+			}else{
+				alert(enter+ ' is in the array');
+			}
+		}
+	</script>
+</body>
+</html>
